@@ -67,18 +67,17 @@
 				</div>
 			</div>
 		</header>
-		<div id="wrap">
-			<div class="container wrap">
-				<div class="main">
-					<div class="sec-panel sec-panel-default">
-						<div class="sec-panel-body">
-							<!-- 广告位 -->
+									<!-- 广告位 -->
                             {{#adBanner}}
                             <div style="margin: 0px 0;">
                                 {{& adBanner}}
                              </div>
                             {{/adBanner}}
-
+		<div id="wrap">
+			<div class="container wrap">
+				<div class="main">
+					<div class="sec-panel sec-panel-default">
+						<div class="sec-panel-body">
 							<ul class="post-loop post-loop-default cols-0">
 								{{ #articleList }}
 								<li class="item" id="post-{{&id}}">
