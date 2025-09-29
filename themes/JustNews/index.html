@@ -72,6 +72,12 @@
 				<div class="main">
 					<div class="sec-panel sec-panel-default">
 						<div class="sec-panel-body">
+							<!-- 广告位 -->
+                            {{#adBanner}}
+                            <div style="margin: 30px 0;">
+                                {{& adBanner}}
+                             </div>
+                            {{/adBanner}}
 							<ul class="post-loop post-loop-default cols-0">
 								{{ #articleList }}
 								<li class="item" id="post-{{&id}}">
