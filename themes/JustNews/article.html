@@ -78,10 +78,10 @@
 										<a href="/category/{{&.}}" rel="category tag">{{&.}}</a>
 									{{ /articleSingle.category }}
 									<span class="dot">•</span>
-									<span id="{{ &articleSingle.url }}" class="leancloud_visitors">
-										<em>{{ &OPT.otherCodeA }}</em>
-										<i class="leancloud-visitors-count"></i>
-									</span>
+									<span class="view-count">
+                                       <em>{{ &OPT.otherCodeA }}</em>
+                                       <i id="viewCount-{{ &articleSingle.id }}">{{ #articleSingle.viewCount }}{{ &articleSingle.viewCount }}{{ /articleSingle.viewCount }}{{ ^articleSingle.viewCount }}0{{ /articleSingle.viewCount }}</i>
+                                    </span>
 								</div>
 							</div>
 							<div class="entry-content">
