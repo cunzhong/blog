@@ -256,6 +256,48 @@ var fifuImageVars = {"fifu_lazy":"1","fifu_woo_lbox_enabled":"1","fifu_woo_zoom"
 			</script>
 <script>hljs.initHighlightingOnLoad(); //代码高亮
 					</script>
+		<script>
+// 文章浏览量统计
+document.addEventListener('DOMContentLoaded', function() {
+    const articleId = '{{ &articleSingle.id }}';
+    
+    // 只有在文章页才统计
+    if (articleId && articleId.length === 6) {
+        // 延迟执行，避免影响页面加载
+        setTimeout(() => {
+            fetch(`/api/view/${articleId}`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                }
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(data => {
+                if (data.success) {
+                    // 更新显示的浏览量
+                    const viewCountElement = document.getElementById(`viewCount-${articleId}`);
+                    if (viewCountElement) {
+                        viewCountElement.textContent = data.viewCount;
+                    }
+                }
+            })
+            .catch(error => {
+                console.error('View count error:', error);
+                // 出错时显示默认值
+                const viewCountElement = document.getElementById(`viewCount-${articleId}`);
+                if (viewCountElement && viewCountElement.textContent === '0') {
+                    viewCountElement.textContent = '1';
+                }
+            });
+        }, 1000); // 延迟1秒执行
+    }
+});
+</script>
 		{{ &OPT.codeBeforBody }}
 	</body>
 
