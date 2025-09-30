@@ -57,24 +57,10 @@
 							{{ #widgetMenuList }}
 								<li class="menu-item"><a href="{{ &url }}">{{ &title }}</a></li>
 							{{ /widgetMenuList }}
-							
-							<!-- 移动端搜索框 - 整合到导航菜单中 -->
-							<li class="menu-item mobile-search-menu-item" style="display: none;">
-								<div class="mobile-search-in-menu">
-									<form id="mobileSearchForm" class="search-form">
-										<input type="text" 
-											   id="mobileSearchInput" 
-											   placeholder="搜索本站内容..." 
-											   autocomplete="off">
-										<button type="submit" class="search-btn">搜索</button>
-									</form>
-									<div class="mobile-search-results"></div>
-								</div>
-							</li>
 						</ul>
 					</nav>
 					<div class="navbar-action pull-right">
-                     <!-- 桌面端搜索框 -->
+                     <!-- 搜索框 -->
                       <div class="search-box">
                        <form id="searchForm">
                         <input type="text" 
@@ -97,6 +83,18 @@
 		</header>
 		<div id="wrap">
 			<div class="container wrap">
+			<!-- 移动端搜索框 - 添加在这里 -->
+    <div class="mobile-search-box">
+      <form id="mobileSearchForm" class="search-form">
+        <input type="text" 
+               id="mobileSearchInput" 
+               placeholder="搜索本站内容..." 
+               autocomplete="off">
+        <button type="submit" class="search-btn">搜索</button>
+      </form>
+      <div class="mobile-search-results"></div>
+    </div>
+				
 				<div class="main">
 					<div class="sec-panel sec-panel-default">
 						   <!-- 广告位 -->
@@ -355,29 +353,7 @@
 					}
 				});
 			})(jQuery);</script>
-		
-		<!-- 添加移动端搜索框显示控制脚本 -->
-		<script>
-		$(document).ready(function() {
-			// 移动端搜索框显示控制
-			function toggleMobileSearch() {
-				if ($(window).width() <= 767) {
-					$('.mobile-search-menu-item').show();
-				} else {
-					$('.mobile-search-menu-item').hide();
-				}
-			}
-			
-			// 初始检查
-			toggleMobileSearch();
-			
-			// 窗口大小改变时检查
-			$(window).resize(function() {
-				toggleMobileSearch();
-			});
-		});
-		</script>
-		
 		{{ &OPT.codeBeforBody }}
 	</body>
+
 </html>
