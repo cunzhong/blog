@@ -60,27 +60,23 @@
 						</ul>
 					</nav>
 					<div class="navbar-action pull-right">
-						<!-- 搜索框 -->
-						<div class="search-box" style="display: inline-block; margin-right: 15px;">
-							<form id="searchForm" style="margin: 0; display: flex;">
-								<input type="text" 
-									   id="searchInput" 
-									   placeholder="搜索本站内容..." 
-									   style="padding: 6px 12px; border: 1px solid #ddd; border-radius: 4px 0 0 4px; outline: none; width: 180px;"
-									   autocomplete="off">
-								<button type="submit" 
-										style="padding: 6px 12px; background: #007cba; color: white; border: 1px solid #007cba; border-radius: 0 4px 4px 0; cursor: pointer;">
-									搜索
-								</button>
-							</form>
-							<!-- 搜索结果下拉框 -->
-							<div id="searchResults" 
-								 style="display: none; position: absolute; background: white; border: 1px solid #ddd; border-radius: 4px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); max-height: 300px; overflow-y: auto; z-index: 1000; width: 280px; margin-top: 5px;"></div>
-						</div>
-						
-						<div id="j-user-wrap">
-							<a class="login cur" href="/admin">登录</a>
-						</div>
+                     <!-- 搜索框 -->
+                      <div class="search-box">
+                       <form id="searchForm">
+                        <input type="text" 
+                               id="searchInput" 
+                               placeholder="搜索本站内容..." 
+                               autocomplete="off">
+                        <button type="submit">搜索</button>
+                       </form>
+						<!-- 搜索结果下拉框 -->
+                   <div id="searchResults"></div>
+                        </div>
+  
+                    <div id="j-user-wrap">
+                         <a class="login cur" href="/admin">登录</a>
+                          </div>
+                        </div>
 					</div>
 				</div>
 			</div>
